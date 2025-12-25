@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Forgive Me ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .question-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .question-box h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            min-height: 60px;
+        }
+
+        .button {
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .yes-button {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            color: white;
+        }
+
+        .yes-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(132, 250, 176, 0.4);
+        }
+
+        .no-button {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .no-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .apology {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .apology.show {
+            display: block;
+        }
+
+        .apology h2 {
+            color: #f5576c;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .apology p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            animation: float 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(0deg);
+            }
+            25% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <h1>💕</h1>
+        
+        <div class="question-box" id="questionBox">
+            <h2>Forgive me please? 🥺</h2>
+            <div class="buttons">
+                <button class="button yes-button" onclick="showApology()">Yes</button>
+                <button class="button no-button" id="noButton" onclick="shrinkNo()">No</button>
+            </div>
+        </div>
+
+        <div class="apology" id="apology">
+            <h2>Thank You So Much! 💖</h2>
+            <p>I know I messed up, and there's no excuse for what I did. I've been thinking about it non-stop, and I can't stand the thought of you being hurt because of me.</p>
+            
+            <p>You mean everything to me. You're the first person I think about when I wake up and the last person on my mind before I sleep. Every moment with you is precious, and I hate that I caused you any pain.</p>
+            
+            <p>I promise to be better. I promise to listen more carefully, to think before I act, and to always consider your feelings. You deserve someone who treats you with respect, kindness, and love every single day, and I want to be that person for you.</p>
+            
+            <p>I'm so grateful that you're willing to forgive me. I won't take this second chance for granted. I'll show you every day how much you mean to me, not just with words, but with actions.</p>
+            
+            <p>Thank you for being patient with me, for being understanding, and for having such a beautiful, forgiving heart. I love you more than I can express, and I'm so lucky to have you in my life.</p>
+            
+            <p style="text-align: center; margin-top: 30px; font-size: 1.3em; color: #f5576c;">I love you ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        let noClickCount = 0;
+        const noTexts = [
+            "No",
+            "Are you sure?",
+            "Really sure?",
+            "Think again!",
+            "Please? 🥺",
+            "Last chance!",
+            "Don't do this!",
+            "Pretty please?"
+        ];
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('hearts').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+
+        function shrinkNo() {
+            const noButton = document.getElementById('noButton');
+            noClickCount++;
+            
+            if (noClickCount < noTexts.length) {
+                noButton.textContent = noTexts[noClickCount];
+                
+                // Shrink the button
+                const currentPadding = 15 - (noClickCount * 2);
+                const currentFontSize = 1.1 - (noClickCount * 0.12);
+                
+                noButton.style.padding = `${currentPadding}px ${currentPadding * 2}px`;
+                noButton.style.fontSize = `${currentFontSize}em`;
+            } else {
+                // Make it invisible
+                noButton.classList.add('hidden');
+            }
+        }
+
+        function showApology() {
+            document.getElementById('questionBox').style.display = 'none';
+            document.getElementById('apology').classList.add('show');
+            
+            // Create extra hearts on yes
+            for(let i = 0; i < 20; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
