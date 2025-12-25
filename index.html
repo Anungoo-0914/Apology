@@ -13,18 +13,51 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #5a6b52;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+                radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 200px 200px, 300px 300px, 250px 250px, 180px 180px;
+            background-position: 0 0, 50px 50px, 100px 25px, 150px 75px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40">🎄</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35">🐱</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="30">🎅</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="25">⭐</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="28">🧦</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="30">❄️</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="25">🎁</text></svg>');
+            background-size: 80px 80px, 90px 90px, 70px 70px, 50px 50px, 75px 75px, 60px 60px, 65px 65px;
+            background-position: 10% 20%, 85% 15%, 15% 75%, 90% 80%, 50% 10%, 70% 65%, 30% 50%;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
             text-align: center;
             padding: 40px;
             max-width: 600px;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -32,6 +65,7 @@
             font-size: 3em;
             margin-bottom: 30px;
             animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .question-box {
@@ -43,7 +77,7 @@
         }
 
         .question-box h2 {
-            color: #333;
+            color: #5a6b52;
             font-size: 1.8em;
             margin-bottom: 40px;
         }
@@ -67,24 +101,24 @@
         }
 
         .yes-button {
-            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            background: linear-gradient(135deg, #c85a54 0%, #d4806c 100%);
             color: white;
         }
 
         .yes-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(132, 250, 176, 0.4);
+            box-shadow: 0 10px 30px rgba(200, 90, 84, 0.4);
         }
 
         .no-button {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #8b9d83 0%, #a8b5a0 100%);
             color: white;
             transition: all 0.3s ease;
         }
 
         .no-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            box-shadow: 0 10px 30px rgba(139, 157, 131, 0.4);
         }
 
         .apology {
@@ -101,7 +135,7 @@
         }
 
         .apology h2 {
-            color: #f5576c;
+            color: #c85a54;
             margin-bottom: 20px;
             font-size: 2em;
         }
@@ -121,7 +155,7 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: -1;
+            z-index: 10;
         }
 
         .heart {
@@ -179,7 +213,7 @@
     <div class="hearts" id="hearts"></div>
     
     <div class="container">
-        <h1>💕</h1>
+        <h1>🐱💕</h1>
         
         <div class="question-box" id="questionBox">
             <h2>Forgive me please? 🥺</h2>
@@ -201,7 +235,7 @@
             
             <p>Thank you for being patient with me, for being understanding, and for having such a beautiful, forgiving heart. I love you more than I can express, and I'm so lucky to have you in my life.</p>
             
-            <p style="text-align: center; margin-top: 30px; font-size: 1.3em; color: #f5576c;">I love you ❤️</p>
+            <p style="text-align: center; margin-top: 30px; font-size: 1.3em; color: #c85a54;">I love you ❤️</p>
         </div>
     </div>
 
@@ -241,14 +275,12 @@
             if (noClickCount < noTexts.length) {
                 noButton.textContent = noTexts[noClickCount];
                 
-                // Shrink the button
                 const currentPadding = 15 - (noClickCount * 2);
                 const currentFontSize = 1.1 - (noClickCount * 0.12);
                 
                 noButton.style.padding = `${currentPadding}px ${currentPadding * 2}px`;
                 noButton.style.fontSize = `${currentFontSize}em`;
             } else {
-                // Make it invisible
                 noButton.classList.add('hidden');
             }
         }
@@ -257,7 +289,6 @@
             document.getElementById('questionBox').style.display = 'none';
             document.getElementById('apology').classList.add('show');
             
-            // Create extra hearts on yes
             for(let i = 0; i < 20; i++) {
                 setTimeout(createHeart, i * 100);
             }
